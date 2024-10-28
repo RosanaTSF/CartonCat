@@ -6,7 +6,7 @@
         --secondary-color: #a8e6cf;
         --background-color: rgba(229, 239, 137, 0.9); /* Fundo translúcido */
         --text-color: #ff69b4;
-        --hover-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra ao passar o mouse */
+        --hover-shadow: 0 6px 12px rgba(255, 182, 193, 0.3); /* Sombra ao passar o mouse */
         --lilac-color: #c6f0c5;
     }
 
@@ -16,22 +16,27 @@
         padding: 10px;
     }
 
-    /* Brand (Logo e Texto) */
+    /* Brand (Texto) */
     .navbar-brand {
-        font-size: 24px;
+        font-size: 36px; /* Aumentar tamanho da fonte */
         font-weight: bold;
         color: #ff69b4; /* Cor do texto */
         display: flex;
         align-items: center;
+        justify-content: center;
+        font-family: 'Comic Sans MS', 'Comic Sans', cursive; /* Fonte fofa */
+        margin: 0 auto; /* Centralizar */
+        transition: color 0.3s ease; /* Transição suave para a cor */
     }
 
-    .navbar-brand img {
-        margin-right: 10px;
+    .navbar-brand:hover, .navbar-brand:focus {
+        color: var(--primary-color); /* Cor ao passar o mouse */
+        outline: none; /* Remover contorno */
     }
 
     /* Navbar Collapse */
     .navbar-collapse {
-        justify-content: flex-end;
+        justify-content: center;
     }
 
     /* Navbar Buttons */
@@ -59,19 +64,34 @@
         transform: translateY(-5px); /* Elevar botão */
         outline: none; /* Remover contorno */
     }
+
+    .navbar-nav {
+        flex-direction: row;
+    }
+
+    .navbar-nav .nav-item {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .navbar-right {
+        margin-left: auto;
+    }
 </style>
 
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
-            <img src="{% static 'images/logo.png' %}" alt="Carton Cat" width="100" height="100">
-            Carton Cat
+            Carton Cat - Lar de Papelão.
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
+            <ul class="navbar-nav mx-auto">
+                <!-- Adicione aqui outros botões de navegação, se houver -->
+            </ul>
+            <ul class="navbar-nav navbar-right">
                 <li class="nav-item">
                     <a href="/admin/" class="btn btn-custom">Entrar</a>
                 </li>

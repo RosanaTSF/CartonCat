@@ -1,10 +1,9 @@
-
 :root {
     --primary-color: #94bce7;
     --secondary-color: #a8e6cf;
     --background-color: rgba(229, 239, 137, 0.9); /* Fundo translúcido */
     --text-color: #ff69b4;
-    --hover-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra ao passar o mouse */
+    --hover-shadow: 0 6px 12px rgba(255, 182, 193, 0.3); /* Sombra ao passar o mouse */
     --lilac-color: #c6f0c5;
 }
 
@@ -26,10 +25,15 @@ body {
 }
 
 /* Estilo dos botões */
-.button {
+.button,
+.nav-button,
+.entrar-btn,
+.pesquisa-btn,
+.divulgar-btn,
+.buscar-btn,
+.adote-me-btn {
     background-color: var(--primary-color); /* Cor de fundo */
     color: #ff69b4; /* Cor do texto */
-    padding: 15px 40px; /* Espaçamento interno */
     border: none; /* Remover borda */
     border-radius: 20px; /* Bordas arredondadas */
     cursor: pointer; /* Cursor de ponteiro */
@@ -37,8 +41,39 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
 }
 
-/* Estilo dos botões ao passar o mouse ou focar */
-.button:hover, .button:focus {
+.button {
+    padding: 15px 40px; /* Espaçamento interno */
+}
+
+.nav-button,
+.entrar-btn,
+.pesquisa-btn,
+.divulgar-btn,
+.buscar-btn,
+.adote-me-btn {
+    padding: 10px 20px; /* Espaçamento interno */
+    max-width: 150px; /* Largura máxima */
+}
+
+.nav-button,
+.entrar-btn {
+    padding: 15px 30px; /* Espaçamento interno */
+}
+
+.button:hover,
+.button:focus,
+.nav-button:hover,
+.nav-button:focus,
+.entrar-btn:hover,
+.entrar-btn:focus,
+.pesquisa-btn:hover,
+.pesquisa-btn:focus,
+.divulgar-btn:hover,
+.divulgar-btn:focus,
+.buscar-btn:hover,
+.buscar-btn:focus,
+.adote-me-btn:hover,
+.adote-me-btn:focus {
     background-color: var(--secondary-color); /* Cor de fundo ao passar o mouse */
     color: var(--primary-color); /* Cor do texto ao passar o mouse */
     box-shadow: var(--hover-shadow); /* Sombra ao passar o mouse */
@@ -46,11 +81,11 @@ body {
     outline: none; /* Remover contorno */
 }
 
-/* Estilo da imagem do logo */
-.logo-img {
-    width: 150px; /* Largura */
-    height: auto; /* Altura automática */
-    border-radius: 20px; /* Bordas arredondadas */
+.entrar-btn {
+    position: absolute; /* Posição absoluta */
+    top: 15px; /* Posição no topo */
+    right: 10px; /* Posição à direita */
+    transform: scale(1.05); /* Aumentar botão */
 }
 
 /* Estilo do contêiner do cabeçalho */
@@ -74,87 +109,8 @@ body {
     margin: 0; /* Remover margens */
 }
 
-/* Estilo dos itens da lista de navegação */
 .nav-list li {
     margin-right: 20px; /* Espaçamento à direita */
-}
-
-/* Estilo dos botões de navegação */
-.nav-button {
-    background-color: var(--primary-color); /* Cor de fundo */
-    color: #ff69b4; /* Cor do texto */
-    padding: 15px 30px; /* Espaçamento interno */
-    border: none; /* Remover borda */
-    border-radius: 20px; /* Bordas arredondadas */
-    text-decoration: none; /* Remover sublinhado */
-    font-size: 16px; /* Tamanho da fonte */
-    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
-}
-
-/* Estilo dos botões de navegação ao passar o mouse ou focar */
-.nav-button:hover, .nav-button:focus {
-    background-color: var(--secondary-color); /* Cor de fundo ao passar o mouse */
-    color: var(--primary-color); /* Cor do texto ao passar o mouse */
-    box-shadow: var(--hover-shadow); /* Sombra ao passar o mouse */
-    transform: translateY(-5px); /* Elevar botão */
-    outline: none; /* Remover contorno */
-}
-
-/* Estilo do botão "Entrar" */
-.entrar-btn {
-    background-color: var(--primary-color); /* Cor de fundo */
-    color: #ff69b4; /* Cor do texto */
-    padding: 15px 30px; /* Espaçamento interno */
-    border: none; /* Remover borda */
-    border-radius: 20px; /* Bordas arredondadas */
-    cursor: pointer; /* Cursor de ponteiro */
-    position: absolute; /* Posição absoluta */
-    top: 15px; /* Posição no topo */
-    right: 10px; /* Posição à direita */
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Transições suaves */
-}
-
-/* Estilo do botão "Entrar" ao passar o mouse ou focar */
-.entrar-btn:hover, .entrar-btn:focus {
-    background-color: var(--secondary-color); /* Cor de fundo ao passar o mouse */
-    color: var(--primary-color); /* Cor do texto ao passar o mouse */
-    box-shadow: var(--hover-shadow); /* Sombra ao passar o mouse */
-    transform: scale(1.05); /* Aumentar botão */
-    outline: none; /* Remover contorno */
-}
-
-/* Estilo do grupo de botões */
-.button-group {
-    display: flex; /* Layout flexível */
-    flex-wrap: wrap; /* Quebrar linha quando necessário */
-    justify-content: space-between; /* Espaçar itens */
-    width: 80%; /* Largura */
-    margin: 20px auto; /* Margem automática */
-    gap: 20px; /* Espaçamento entre itens */
-}
-
-/* Estilo dos botões de ação */
-.pesquisa-btn, .divulgar-btn, .buscar-btn, .adote-me-btn {
-    background-color: var(--primary-color); /* Cor de fundo */
-    color: #ff69b4; /* Cor do texto */
-    padding: 10px 20px; /* Espaçamento interno */
-    border: none; /* Remover bordas */
-    border-radius: 15px; /* Bordas arredondadas */
-    cursor: pointer; /* Cursor de ponteiro */
-    flex: 1; /* Flexível */
-    max-width: 150px; /* Largura máxima */
-    font-size: 16px; /* Tamanho da fonte */
-    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
-}
-
-/* Estilo dos botões de ação ao passar o mouse ou focar */
-.pesquisa-btn:hover, .divulgar-btn:hover, .buscar-btn:hover, .adote-me-btn:hover,
-.pesquisa-btn:focus, .divulgar-btn:focus, .buscar-btn:focus, .adote-me-btn:focus {
-    background-color: var(--secondary-color); /* Cor de fundo ao passar o mouse */
-    color: var(--primary-color); /* Cor do texto ao passar o mouse */
-    box-shadow: var(--hover-shadow); /* Sombra ao passar o mouse */
-    transform: translateY(-5px); /* Elevar botão */
-    outline: none; /* Remover contorno */
 }
 
 /* Estilo da grade de pets */
@@ -187,12 +143,12 @@ body {
 }
 
 /* Estilo das informações dos pets */
-.pet-info-top, .pet-info-bottom {
+.pet-info-top,
+.pet-info-bottom {
     text-align: center; /* Centralizar texto */
     color: #ff69b4; /* Cor do texto */
 }
 
-/* Estilo do texto das informações dos pets */
 .pet-info-top p {
     margin: 0; /* Remover margens */
     font-size: 16px; /* Tamanho da fonte */
@@ -200,30 +156,8 @@ body {
     color: #ff69b4; /* Cor do texto */
 }
 
-/* Margem superior das informações dos pets */
 .pet-info-bottom {
     margin-top: 10px; /* Margem superior */
-}
-
-/* Estilo do botão "Adote-me" */
-.adote-me-btn {
-    background-color: var(--lilac-color); /* Cor de fundo */
-    color: #ff69b4; /* Cor do texto */
-    font-size: 16px; /* Tamanho da fonte */
-    font-weight: bold; /* Negrito */
-    padding: 8px 12px; /* Espaçamento interno */
-    border: 2px solid var(--primary-color); /* Borda */
-    border-radius: 10px; /* Bordas arredondadas */
-    cursor: pointer; /* Cursor de ponteiro */
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Transições suaves */
-}
-
-/* Estilo do botão "Adote-me" ao passar o mouse ou focar */
-.adote-me-btn:hover, .adote-me-btn:focus {
-    background-color: #ff69b4; /* Cor de fundo ao passar o mouse */
-    color: #94bce7; /* Cor do texto ao passar o mouse */
-    transform: translateY(-3px); /* Elevar botão */
-    outline: none; /* Remover contorno */
 }
 
 /* Estilo do formulário de busca */
@@ -236,15 +170,17 @@ body {
 }
 
 /* Estilo dos campos de entrada e seleção do formulário de busca */
-.search-input, .search-select, .buscar-btn {
+.search-input,
+.search-select,
+.buscar-btn {
     padding: 10px; /* Espaçamento interno */
     border-radius: 10px; /* Bordas arredondadas */
     font-size: 16px; /* Tamanho da fonte */
     border: none; /* Remover borda */
 }
 
-/* Estilo dos campos de entrada e seleção */
-.search-input, .search-select {
+.search-input,
+.search-select {
     background-color: var(--primary-color); /* Cor de fundo */
     color: var(--secondary-color); /* Cor do texto */
 }
@@ -257,8 +193,8 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
 }
 
-/* Estilo do botão de busca ao passar o mouse ou focar */
-.buscar-btn:hover, .buscar-btn:focus {
+.buscar-btn:hover,
+.buscar-btn:focus {
     background-color: var(--secondary-color); /* Cor de fundo ao passar o mouse */
     color: var(--primary-color); /* Cor do texto ao passar o mouse */
     box-shadow: var(--hover-shadow); /* Sombra ao passar o mouse */
@@ -286,7 +222,8 @@ footer {
         width: 100%; /* Largura total */
     }
 
-    .pesquisa-btn, .divulgar-btn {
+    .pesquisa-btn,
+    .divulgar-btn {
         width: 100%; /* Largura total */
     }
 }
