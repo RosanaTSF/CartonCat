@@ -1,5 +1,5 @@
-# Carton Cat - Lar de Papelão. (Em construção)
-Lar de resgate e adoção de gatinhos.
+# Carton Cat - Lar de Papelão.
+Lar de resgate e adoção de gatinhos. Em construção.
 
 
 ### Bootcamp de Backend em Python/Django (ProjetoFinal_SquadSarahGilbert).
