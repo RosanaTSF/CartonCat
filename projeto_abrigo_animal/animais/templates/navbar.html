@@ -1,9 +1,18 @@
 {% load static %}
 
 <style>
+    :root {
+        --primary-color: #94bce7;
+        --secondary-color: #a8e6cf;
+        --background-color: rgba(229, 239, 137, 0.9); /* Fundo translúcido */
+        --text-color: #ff69b4;
+        --hover-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra ao passar o mouse */
+        --lilac-color: #c6f0c5;
+    }
+
     /* Navbar Container */
     .navbar {
-        background-color: #f8f9fa; /* Fundo branco */
+        background-color: var(--background-color); /* Fundo translúcido */
         padding: 10px;
     }
 
@@ -11,7 +20,7 @@
     .navbar-brand {
         font-size: 24px;
         font-weight: bold;
-        color: #6a329f; /* Cor roxa */
+        color: #ff69b4; /* Cor do texto */
         display: flex;
         align-items: center;
     }
@@ -20,77 +29,56 @@
         margin-right: 10px;
     }
 
-    /* Navbar Items (Estilo de Botão) */
-    .nav-link {
-        font-size: 16px;
-        color: #fff;
-        background-color: #6a329f; /* Cor roxa */
+    /* Navbar Collapse */
+    .navbar-collapse {
+        justify-content: flex-end;
+    }
+
+    /* Navbar Buttons */
+    .navbar-nav .nav-item .nav-link {
+        color: #ff69b4; /* Cor do texto */
         margin-right: 10px;
-        padding: 10px 20px;
-        border-radius: 8px;
-        text-align: center;
-        display: inline-block;
     }
 
-    .nav-link:hover {
-        background-color: #4d2176; /* Cor roxa mais escura ao passar o mouse */
-        color: #fff;
+    .navbar-nav .nav-item .btn {
+        margin-right: 10px;
     }
 
-    /* Botões de Ação */
-    .btn-outline-primary {
-        border-color: #6a329f;
-        color: #6a329f; /* Cor roxa */
+    .btn-custom {
+        background-color: var(--primary-color); /* Cor de fundo */
+        color: #ff69b4; /* Cor do texto */
+        border: none; /* Remover borda */
+        border-radius: 20px; /* Bordas arredondadas */
+        transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
     }
 
-    .btn-outline-primary:hover {
-        background-color: #6a329f;
-        color: #fff;
-    }
-
-    .btn-warning {
-        background-color: #f5a623; /* Cor laranja */
-        color: #fff;
-    }
-
-    .btn-warning:hover {
-        background-color: #d18a1e; /* Cor laranja mais escura */
-    }
-
-    /* Mobile Toggle Icon */
-    .navbar-toggler {
-        border-color: #6a329f; /* Cor roxa para o ícone de toggle no mobile */
-    }
-
-    .navbar-toggler-icon {
-        background-color: #6a329f; /* Ícone de toggle roxo */
+    .btn-custom:hover, .btn-custom:focus {
+        background-color: var(--secondary-color); /* Cor de fundo ao passar o mouse */
+        color: #94bce7; /* Cor do texto ao passar o mouse */
+        box-shadow: var(--hover-shadow); /* Sombra ao passar o mouse */
+        transform: translateY(-5px); /* Elevar botão */
+        outline: none; /* Remover contorno */
     }
 </style>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
             <img src="{% static 'images/logo.png' %}" alt="Carton Cat" width="100" height="100">
+            Carton Cat
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Sobre Nós</a>
+                    <a href="/admin/" class="btn btn-custom">Entrar</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Quero Adotar</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Quero Ajudar</a>
+                    <a href="/register/" class="btn btn-custom">Cadastre-se</a>
                 </li>
             </ul>
-            <div class="d-flex">
-                <a href="/admin/" class="btn btn-outline-primary me-2">Entrar</a>
-                <a href="/register/" class="btn btn-warning">Cadastre-se</a>
-            </div>
         </div>
     </div>
 </nav>

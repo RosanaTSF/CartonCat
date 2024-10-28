@@ -4,60 +4,22 @@
 {% block content %}
 <!-- Cabeçalho / Navegação -->
 <header>
-    <div class="header-container">
-        <div class="logo">
-            <img src="{% static 'images/logo.png' %}" alt="Logo Peludinhos S.A" class="logo-img">
-        </div>
+    
         <nav>
             <ul class="nav-list">
                 <li><a href="#" class="nav-button">Sobre Nós</a></li>
                 <li><a href="#" class="nav-button">Quero Adotar</a></li>
                 <li><a href="#" class="nav-button">Quero Ajudar</a></li>
+                <li><a href="#" class="nav-button">Resgatar</a></li>
+                <li><a href="#" class="nav-button">Contato</a></li>
+
             </ul>
         </nav>
-        <button class="entrar-btn">Entrar</button>
     </div>
 </header>
 
-<!-- Seção de Pesquisa e Divulgação -->
-<section class="pesquisa-divulgacao">
-    <div class="button-group">
-        <button class="pesquisa-btn">Pesquisar</button>
-        <button class="divulgar-btn">Quero divulgar um Pet</button>
-    </div>
-    <form class="search-form">
-        <input type="text" placeholder="Nome do Pet" class="search-input">
-        <select class="search-select">
-            <option value="">Espécie</option>
-            <option value="cachorro">Cachorro</option>
-            <option value="gato">Gato</option>
-        </select>
-        <select class="search-select">
-            <option value="">Gênero</option>
-            <option value="masculino">Masculino</option>
-            <option value="feminino">Feminino</option>
-        </select>
-        <select class="search-select">
-            <option value="">Porte</option>
-            <option value="pequeno">Pequeno</option>
-            <option value="medio">Médio</option>
-            <option value="grande">Grande</option>
-        </select>
-        <select class="search-select">
-            <option value="">Estado</option>
-            <!-- Adicione opções de estados aqui -->
-        </select>
-        <select class="search-select">
-            <option value="">Cidade</option>
-            <!-- Adicione opções de cidades aqui -->
-        </select>
-        <button type="submit" class="buscar-btn">Buscar</button>
-    </form>
-</section>
-
-<!-- Seção de Pets -->
+<!-- Seção de Cats -->
 <section class="pets-grid">
-    <!-- Intercalando Gatos e Cachorros -->
     <div class="pet-card">
         <div class="pet-info-top">
             <p>Abel</p>
