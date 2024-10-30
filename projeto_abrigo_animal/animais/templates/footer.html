@@ -1,140 +1,230 @@
 {% load static %}
 
 <style>
+    :root {
+        --primary-color: #94bce7; 
+        --secondary-color: #a8e6cf; 
+        --background-color: rgba(229, 239, 137, 0.95);
+        --text-color: #ff69b4;
+        --hover-shadow: 0 6px 12px rgba(255, 182, 193, 0.3);
+        --report-bg-color: #fdfdfe;
+        --link-color: #ff69b4;
+    }
+
     .footer {
-        background-color: #f8f9fa !important;
-        padding: 40px 0;
-    }
-
-    .image-row {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        flex-wrap: nowrap;
-        margin-bottom: 20px;
-    }
-
-    .profile-circle {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        overflow: hidden;
-        border: 2px solid #f0c040;
-    }
-
-    .profile-circle img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.3s ease-in-out;
-    }
-
-    .profile-circle img:hover {
-        transform: scale(1.1);
-    }
-
-    .footer-links {
-        margin-bottom: 10px;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        font-family: Arial, sans-serif;
+        padding: 20px;
         text-align: center;
     }
 
-    .footer-links a {
-        color: #333 !important;
-        font-size: 12px;
+    .footer-bottom {
+        background-color: var(--primary-color);
+        color: var(--text-color);
+        padding: 10px;
+        font-weight: bold;
+    }
+
+    .report-section {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 20px;
+        background-color: var(--report-bg-color);
+        padding: 20px;
+        border-radius: 15px;
+    }
+
+    .report-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 15px;
+        border-radius: 15px;
+        background-color: var(--secondary-color);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition: background 0.3s, transform 0.2s;
+    }
+
+    .report-item:hover {
+        background-color: rgba(255, 182, 193, 0.2);
+        transform: scale(1.03);
+    }
+
+    .report-item h5 {
+        font-size: 18px;
+        color: var(--text-color);
+        font-weight: bold;
+    }
+
+    .report-item a {
+        font-size: 16px;
+        color: var(--link-color);
         text-decoration: none;
         font-weight: bold;
-        transition: color 0.3s ease-in-out;
     }
 
-    .footer-links a:hover {
-        color: #f0c040 !important;
+    .report-item a:hover {
+        color: var(--text-color);
+        text-decoration: underline;
     }
 
-    .text-uppercase {
+    .info-section {
+        max-width: 400px;
+        color: var(--text-color);
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .info-section h5 {
         font-size: 18px;
-        color: rgb(97, 51, 135);
+        font-weight: bold;
+        margin: 0;
+        text-align: center;
     }
 
-    .footer h5 {
-        font-size: 10px;
+    .footer-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 20px;
     }
 
-    .footer p {
-        font-size: 12px;
+    .footer-links h5 {
+        font-size: 18px;
+        color: var(--text-color);
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .footer-links button {
+        background-color: var(--primary-color);
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-size: 16px;
+        color: var(--text-color);
+        cursor: pointer;
+        transition: background-color 0.3s, box-shadow 0.2s;
+    }
+
+    .footer-links button:hover {
+        background-color: var(--secondary-color);
+        box-shadow: var(--hover-shadow);
+    }
+
+    .team-section {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 30px;
+    }
+
+    .profile-circle img {
+        border-radius: 50%;
+        max-width: 100px;
+        max-height: 100px;
+        width: auto;
+        height: auto;
     }
 
     .container {
-        margin-top: 40px; /* Para distanciar o conteúdo do rodapé */
+        margin-top: 40px;
+    }
+
+    /* Responsividade */
+    @media (max-width: 600px) {
+        .footer, .report-section, .team-section {
+            flex-direction: column;
+            padding: 10px;
+        }
+
+        .footer-links {
+            gap: 10px;
+            padding: 15px;
+        }
     }
 </style>
 
-<footer class="footer bg-light text-center text-lg-start">
-    <div class="container p-4">
+<footer class="footer">
+    <div class="container">
+        <!-- Seção de Informações -->
+        <div class="info-section">
+            <h5>Abuso, abandono e violência contra animais são crimes, conforme a Lei 9.605/98, com penas de 2 a 5 anos de prisão, multa e proibição de guarda.</h5>
+            <h5 style="margin-top: 5px;">Denuncie:</h5>
+        </div>
+
+        <!-- Seção de Denúncias -->
+        <div class="report-section">
+            <div class="report-item">
+                <h5>Polícia Militar</h5>
+                <a href="tel:190" aria-label="Ligar para a Polícia Militar">Ligue 190</a>
+            </div>
+            <div class="report-item">
+                <h5>Secretaria do Verde e do Meio Ambiente</h5>
+                <a href="tel:156" aria-label="Ligar para Secretaria do Verde e do Meio Ambiente">Ligue 156</a>
+            </div>
+            <div class="report-item">
+                <h5>Centro de Controle de Zoonoses</h5>
+                <a href="tel:+551133978900" aria-label="Ligar para Centro de Controle de Zoonoses">(11) 3397-8900</a>
+            </div>
+            <div class="report-item">
+                <h5>Delegacia de Polícia</h5>
+                <a href="tel:190" aria-label="Ligar para Delegacia de Polícia">Ligue 190</a>
+            </div>
+        </div>
+
+        <!-- Seção de Equipe (lado a lado) -->
         <div class="team-section">
-            <div class="image-row">
-                <div class="profile-circle">
-                    <a href="https://www.linkedin.com/in/rosanatsf/" target="_blank">
-                        <img src="{% static 'images/topCat/bacana.jpg' %}" alt="Foto 1">
-                    </a>
-                </div>
-                <div class="profile-circle">
-                    <a href="https://www.linkedin.com/in/rosanatsf/" target="_blank">
-                        <img src="{% static 'images/topCat/batatinha.jpg' %}" alt="Foto 2">
-                    </a>
-                </div>
-                <div class="profile-circle">
-                    <a href="https://www.linkedin.com/in/rosanatsf/" target="_blank">
-                        <img src="{% static 'images/topCat/espeto.jpg' %}" alt="Foto 3">
-                    </a>
-                </div>
-                <div class="profile-circle">
-                    <a href="https://www.linkedin.com/in/rosanatsf/" target="_blank">
-                        <img src="{% static 'images/topCat/genio.jpg' %}" alt="Foto 4">
-                    </a>
-                </div>
-                <div class="profile-circle">
-                    <a href="https://www.linkedin.com/in/rosanatsf/" target="_blank">
-                        <img src="{% static 'images/topCat/mandachuva.jpg' %}" alt="Foto 5">
-                    </a>
-                </div>
-                <div class="profile-circle">
-                    <a href="https://www.linkedin.com/in/rosanatsf/" target="_blank">
-                        <img src="{% static 'images/topCat/xuxu.jpg' %}" alt="Foto 6">
-                    </a>
-                </div>
+            <div class="profile-circle">
+                <a href="https://www.linkedin.com/in/rosanatsf/" target="_blank">
+                    <img src="{% static 'images/topCat/bacana.jpg' %}" alt="Foto 1">
+                </a>
+            </div>
+            <div class="profile-circle">
+                <a href="https://www.linkedin.com/in/rosanatsf/" target="_blank">
+                    <img src="{% static 'images/topCat/batatinha.jpg' %}" alt="Foto 2">
+                </a>
+            </div>
+            <div class="profile-circle">
+                <a href="https://www.linkedin.com/in/rosanatsf/" target="_blank">
+                    <img src="{% static 'images/topCat/espeto.jpg' %}" alt="Foto 3">
+                </a>
+            </div>
+            <div class="profile-circle">
+                <a href="https://www.linkedin.com/in/rosanatsf/" target="_blank">
+                    <img src="{% static 'images/topCat/genio.jpg' %}" alt="Foto 4">
+                </a>
+            </div>
+            <div class="profile-circle">
+                <a href="https://www.linkedin.com/in/rosanatsf/" target="_blank">
+                    <img src="{% static 'images/topCat/mandachuva.jpg' %}" alt="Foto 5">
+                </a>
+            </div>
+            <div class="profile-circle">
+                <a href="https://www.linkedin.com/in/rosanatsf/" target="_blank">
+                    <img src="{% static 'images/topCat/xuxu.jpg' %}" alt="Foto 6">
+                </a>
             </div>
         </div>
 
         <!-- Seção de Links -->
-        <div class="row">
-            <div class="col-lg-4 col-md-6 mb-4 mb-md-0 footer-links">
-                <h5 class="text-uppercase">Adotar Animais</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#!">Divulgue um Animal</a></li>
-                    <li><a href="{% url 'home' %}">Quero Adotar</a></li>
-                </ul>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4 mb-md-0 footer-links">
-                <h5 class="text-uppercase">Sobre Nós</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#!">Quem Somos</a></li>
-                    <li><a href="#!">Quero Ajudar</a></li>
-                </ul>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4 mb-md-0 footer-links">
-                <h5 class="text-uppercase">Cadastro</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#!">Cadastre-se</a></li>
-                    <li><a href="/admin/">Seja um(a) Cuidador(a)</a></li>
-                </ul>
-            </div>
+        <div class="footer-links">
+            <button onclick="window.location.href='/eventos'">Eventos</button>
+            <button onclick="window.location.href='/lojinha'">Lojinha</button>
+            <button onclick="window.location.href='/contato'">Contato</button>
         </div>
     </div>
 
-    <!-- Copyright -->
-    <div class="text-center p-3 bg-dark text-light">
+    <!-- Rodapé Inferior -->
+    <div class="footer-bottom">
         <p>© 2024 Todos os direitos reservados.</p>
     </div>
 </footer>
