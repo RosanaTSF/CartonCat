@@ -1,22 +1,7 @@
-# ProjetoFinal_SquadSarahGilbert-
+# Carton Cat - Lar de Papelão 🐱 
+Lar de resgate e adoção de gatinhos. Em construção.  
+Primeiro Protótipo.
 
-clonar:<br>
-```git clone https://github.com/liviaboscolo/ProjetoFinal_SquadSarahGilbert.git```
+### Bootcamp pela Womakerscode - Backend em Python/Django (ProjetoFinal_SquadSarahGilbert).
 
-instalar dependencias do projeto:<br>
-```poetry install``` <br>
-
-instalar um pacote <br>
-```poetry add django==4.2.5```<br>
-
-COMANDOS: <br>
-```poetry rum python manage.py runserver```<br>
-```poetry run python manage.py startapp nome_app```<br>
-```poetry rum python manage.py runserver```<br>
-
-ALTERAÇÕES NO DB <br>
-```poetry run python manage.py makemigrations```<br>
-```poetry run python manage.py migrate```
-
-ADMIN SUPER USER<br>
-```poetry run python manage.py createsuperuser```
+![Captura de Tela](projeto_abrigo_animal/static/images/tela.png)
