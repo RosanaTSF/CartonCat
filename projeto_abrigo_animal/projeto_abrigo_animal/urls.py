@@ -1,27 +1,32 @@
 """
-URL configuration for projeto_abrigo_animal project.
+Configuração de URLs para o projeto `projeto_abrigo_animal`.
 
-The `urlpatterns` list routes URLs to views. For more information please see:
+A lista `urlpatterns` direciona URLs para as views apropriadas. Para mais informações, veja:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+
+Exemplos:
+Views baseadas em funções
+    1. Adicione um import:  from my_app import views
+    2. Adicione uma URL para `urlpatterns`:  path('', views.home, name='home')
+Views baseadas em classes
+    1. Adicione um import:  from other_app.views import Home
+    2. Adicione uma URL para `urlpatterns`:  path('', Home.as_view(), name='home')
+Incluindo outro arquivo de URL
+    1. Importe a função `include`: from django.urls import include, path
+    2. Adicione uma URL para `urlpatterns`:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
-from django.urls import path , include
+from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('',include('animais.urls')),
-    path('usuarios/', include('usuarios.urls')),
+    path('admin/', admin.site.urls),  # URL para acessar o painel de administração
+    path('', include('animais.urls')),  # Inclui URLs do app 'animais' na raiz do site
+    path('usuarios/', include('usuarios.urls')),  # Inclui URLs do app 'usuarios' na rota '/usuarios/'
 ]
-urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+
+# Adiciona configuração para servir arquivos de mídia apenas em modo DEBUG
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,16 +1,22 @@
-from django.urls import path 
-from .import views 
-from django.conf import settings
-from django.conf.urls.static import static
+from django.urls import path  # Importa a função path para definir rotas.
+from . import views  # Importa as views do aplicativo atual.
+from django.conf import settings  # Importa as configurações do projeto, especialmente para verificar se está em modo DEBUG.
+from django.conf.urls.static import static  # Importa a função para servir arquivos estáticos em desenvolvimento.
 
-
+# Definindo as URLs do aplicativo
 urlpatterns = [
-    path('',views.home,name='home'),
-    path('detalhes/<int:id>/', views.detalhes, name='detalhes'),
-    path('cadastro_animal',views.cadastro_animal ,name= 'cadastro_animal'),
-    path('map/', views.map_view, name='map'),
+    path('', views.home, name='home'),  # URL para a página inicial, chama a função 'home' na view.
     
+    # URL para a página de detalhes de um animal específico, identificada pelo 'id' do animal.
+    path('detalhes/<int:id>/', views.detalhes, name='detalhes'),  
+    
+    # URL para a página de cadastro de animais, chama a função 'cadastro_animal' na view.
+    path('cadastro_animal/', views.cadastro_animal, name='cadastro_animal'),  
+    
+    # URL para a página do mapa, chama a função 'map_view' na view.
+    path('map/', views.map_view, name='map'),  
 ]
 
-if settings.DEBUG:  # Isso é importante para garantir que a configuração de mídia só seja aplicada no modo de desenvolvimento
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# Configuração de URLs de mídia para servir arquivos de mídia em modo de desenvolvimento
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # Serve arquivos de mídia durante o desenvolvimento.

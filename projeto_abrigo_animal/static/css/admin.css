@@ -1,30 +1,35 @@
 :root {
-    --primary-color: #6f42c1;
-    --secondary-color: rgb(238, 169, 0);
-    --background-color: rgba(0, 0, 0, 0);
+    --primary-color: #94bce7; /* Cor primária do estilo */
+    --secondary-color: #a8e6cf; /* Cor secundária do estilo */
+    --background-color: rgba(229, 239, 137, 0.9); /* Fundo translúcido do estilo */
+    --button-text-color: #ff69b4; /* Cor do texto dos botões do estilo */
+    --button-hover-color: #94bce7; /* Cor do texto ao passar o mouse */
 }
 
-
+/* Estilo para Imagens */
 img {
-    max-width:40%;
-    max-height:40%;
-  }
-
-button.btn {
-    background-color: var(--primary-color);
-    color: rgb(255, 255, 255);
+    max-width: 40%;
+    max-height: 40%;
 }
 
+/* Estilo de Botões */
+button.btn,
 .btn-block {
-    background-color: var(--primary-color);
-    color: rgb(255, 255, 255);
+    background-color: var(--primary-color); /* Cor de fundo dos botões */
+    color: var(--button-text-color); /* Cor do texto dos botões */
+    border: none; /* Remove borda padrão */
+    border-radius: 20px; /* Bordas arredondadas para melhor estética */
+    padding: 10px 20px; /* Adiciona espaço interno aos botões */
+    cursor: pointer; /* Aponta o cursor para indicar que é clicável */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave para mudanças de estilo */
 }
 
 .btn:hover {
-    background-color: #6f42c1;
-    color:rgb(238, 169, 0)
+    background-color: var(--secondary-color); /* Cor de fundo ao passar o mouse */
+    color: var(--primary-color); /* Cor do texto ao passar o mouse */
 }
 
+/* Estilo para ícones com classe fa-inverse */
 .fa-inverse {
-    color: var(--fa-inverse,#6f42c1);
+    color: var(--fa-inverse, var(--primary-color)); /* Usando a variável primária como fallback */
 }

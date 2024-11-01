@@ -1,167 +1,42 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-        header {
-            background-color: (97, 51, 135);
-            color: white;
-            padding: 10px;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-        }
-        .animal-info {
-            display: flex;
-            justify-content: space-between;
-        }
-        .animal-info .photo {
-            width: 40%;
-            height: 300px;
-            background-color: #eee;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 8px;
-        }
-        .animal-info .details {
-            width: 55%;
-        }
-        .animal-info .details h2 {
-            color: rgb(238, 169, 0);
-            font-weight: bolder;
-        }
-        .medical-info {
-            margin-top: 20px;
-            
-        }
-        .medical-info h3 {
-            margin-bottom: 10px;
-            color: rgb(238, 169, 0);
-            font-weight: bolder;
-            
-        }
-        .medical-info .status {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .medical-info  .btn{
-            background-color:RGB(144, 112, 171); 
-            color: #000000;
-            border-style: none;
-            font-weight:lighter;
-            
-        }
-
-        .medical-info  .btn:hover {
-            background-color: #4c2277; 
-            color:white
-        }
-
-
-        .status div {
-            padding: 10px;
-            background-color: #eee;
-            border-radius: 8px;
-            width: 30%;
-            text-align: center;
-            font-weight: bold;
-        }
-        .adopt-button {
-            display: block; /* Para garantir que o botão seja tratado como bloco */
-            margin-top: 20px; /* Espaço acima do botão */
-            padding: 15px;
-            background-color: rgb(97, 51, 135);
-            color: white;
-            text-align: center;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
-            width: 100%; /* Largura de 100% */
-        }
-
-        .adopt-button:hover {
-            background-color: #e5883b;
-        }
-
-        .other-animals {
-            margin-top: 30px;
-        }
-        .other-animals h3 {
-            color: rgb(97, 51, 135);
-        }
-        .other-animals .gallery {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .text-h3{
-            color: rgb(97, 51, 135);
-        }
-        .gallery .animal {
-            width: 23%;
-            height: 150px;
-            background-color: #eee;
-            border-radius: 8px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        #map {
-            width: 100%;
-            height: 30%; /* Defina a altura desejada do mapa */
-            margin-top: auto; /* Empurra o mapa para o final da página */
-        }
- 
-    </style>
-
     <div class="container mt-4">
-        <div class="animal-info">
+        <div class="pet-info">
             <div class="photo">
-                <!-- Aqui vai a imagem do animal ou um quadrado em branco (falta vincular o banco)-->
-                <img src="{{ animal.foto_animal.url }}" alt="{{ animal.nome }}">
-
+                <img src="{{ pet.foto_pet.url }}" alt="{{ pet.nome }}">
             </div>
             <div class="details">
-                <h2>{{ animal.nome }}</h2>
-                <p>{{ animal.tipo }} |  {{ animal.sexo }} |  {{ animal.idade }}  | {{ animal.porte }} | {{ animal.raca }}</p>
-                <p><strong>Local:</strong> São Paulo</p> <!-- falta vincular o banco -->
-                <p><strong>História:</strong> {{ animal.descricao }} </p>
-                <a href="/admin/" class="adopt-button btn btn-primary">Quero Adotar</a>
+                <h2 class="highlight-text">{{ pet.nome }}</h2>
+                <p>{{ pet.tipo }} | {{ pet.sexo }} | {{ pet.idade }} | {{ pet.porte }} | {{ pet.raca }}</p>
+                <p><strong>Local:</strong> São Paulo</p>
+                <p><strong>História:</strong> {{ pet.descricao }}</p>
+                <a href="/admin/" class="adopt-button">Quero Adotar</a>
+                
                 <div class="medical-info">
-                    <h3>Detalhes Médicos:</h3>
+                    <h3 class="medical-title">Detalhes Médicos:</h3>
                     <div class="status">
-                        {% for detalhe in animal.detalhes_medicos %}
-                            <a href="#" class="btn btn-info m-1">{{ detalhe }}</a>
+                        {% for detalhe in pet.detalhes_medicos %}
+                            <div class="medical-detail">{{ detalhe }}</div>
                         {% endfor %}
                     </div>
-                    
                 </div>
             </div>
         </div>
+
         <div class="container mt-4">
-            <h3 class="text-h3">Localização:</h3>
-            <iframe src="{% url 'map' %}" 
-                    style="width: 100%; height: 350px; border: none;">
-            </iframe>
+            <h3 class="section-title">Localização:</h3>
+            <iframe src="{% url 'map' %}" class="location-map"></iframe>
         </div>
 
-        <div class="other-animals">
-            <h3>Outros peludos esperando seu clique</h3>
+        <div class="other-pets">
+            <h3 class="section-title">Outros peludos esperando seu clique</h3>
             <div class="gallery">
-                <div class="animal">[Animal 1]</div> <!-- Aqui vai a imagem do animal ou um quadrado em branco (falta vincular o banco)-->
-                <div class="animal">[Animal 2]</div>
-                <div class="animal">[Animal 3]</div>
-                <div class="animal">[Animal 4]</div>
+                <div class="pet-card">[Pet 1]</div>
+                <div class="pet-card">[Pet 2]</div>
+                <div class="pet-card">[Pet 3]</div>
+                <div class="pet-card">[Pet 4]</div>
             </div>
         </div>
     </div>
-
 {% endblock %}
