@@ -2,19 +2,26 @@
     --primary-color: #94bce7;
     --secondary-color: #a8e6cf;
     --background-color: rgba(229, 239, 137, 0.9);
-    --text-color: #ff69b4;
+    --text-color: #ff1493; /* Rosa mais escuro */
     --highlight-color: #c6f0c5;
     --hover-shadow: 0 6px 12px rgba(255, 182, 193, 0.3);
     --book-background-color: #ffc0cb; /* Fundo rosa claro para os livros */
     --book-text-color: #a8e6cf; /* Texto verde para os livros */
 }
 
+/* Estilo Global */
+* {
+    font-family: Arial, sans-serif; /* Define a fonte como Arial */
+    color: var(--text-color); /* Define a cor do texto */
+    border-width: 10px; /* Define o tamanho das bordas */
+    border-style: solid; /* Define o estilo das bordas */
+    border-color: transparent; /* Define a cor da borda como transparente por padrão */
+}
+
 /* Estilo do Corpo */
 body {
     background: url("../images/background.JPG") no-repeat center center fixed;
     background-size: cover;
-    color: var(--text-color);
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -169,7 +176,7 @@ body {
 .pet-info-top p,
 .livro-info-top p {
     margin: 0;
-    font-size: 18px; /* Aumenta o tamanho da fonte */
+    font-size: 18px;
     font-weight: bold;
 }
 
