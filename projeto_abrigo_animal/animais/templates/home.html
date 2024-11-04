@@ -8,9 +8,9 @@
         <ul class="nav-list">
             <li><a href="#" class="nav-button">Quero Adotar</a></li>
             <li><a href="#" class="nav-button">Quero Ajudar</a></li>
-            <li><a href="#" class="nav-button">Cafeteria</a></li>
+            <li><a href="#" class="nav-button">Gato News</a></li>
             <li><a href="#" class="nav-button">Livraria</a></li>
-            <li><a href="#" class="nav-button">Produtos</a></li>
+            <li><a href="#" class="nav-button">Eventos</a></li>
             <li><a href="#" class="nav-button">Contato</a></li>
         </ul>
     </nav>
@@ -20,40 +20,243 @@
 <main class="content-grid">
     <!-- Coluna de Gatos -->
     <section class="pets-column">
-        <h2>Adote um gatinho</h2>
+        <h2 class="section-title">Adote um gatinho</h2>
         <div class="pets-grid" id="pets-grid">
             <!-- Cartões de pets aqui -->
-            {% for pet in pets %}
             <div class="pet-card">
-                <div class="pet-info-top">
-                    <p>{{ pet.name }}</p>
+                <div class="pet-info-left">
+                    <p>Teodora</p>
+                    <p>Sou uma gatinha!</p>
+                    <button class="adote-me-btn" aria-label="Adotar Gato 1">Adote-me</button>
                 </div>
-                <img src="{% static pet.image %}" alt="Gato {{ pet.name }}" class="pet-img">
-                <div class="pet-info-bottom">
-                    <button class="adote-me-btn" aria-label="Adotar {{ pet.name }}">Adote-me</button>
-                </div>
+                <img src="{% static 'images/nekos/cat1.jpg' %}" alt="Gato 1" class="pet-img">
             </div>
-            {% endfor %}
+            <div class="pet-card">
+                <div class="pet-info-left">
+                    <p>Juliano</p>
+                    <p>Sou uma gatinho!</p>
+                    <button class="adote-me-btn" aria-label="Adotar Gato 2">Adote-me</button>
+                </div>
+                <img src="{% static 'images/nekos/cat2.jpg' %}" alt="Gato 2" class="pet-img">
+            </div>
+            <div class="pet-card">
+                <div class="pet-info-left">
+                    <p>Antonieta</p>
+                    <p>Sou uma gatinha!</p>
+                    <button class="adote-me-btn" aria-label="Adotar Gato 3">Adote-me</button>
+                </div>
+                <img src="{% static 'images/nekos/cat3.jpg' %}" alt="Gato 3" class="pet-img">
+            </div>
+            <div class="pet-card">
+                <div class="pet-info-left">
+                    <p>Samuca</p>
+                    <p>Sou uma gatinho!</p>
+                    <button class="adote-me-btn" aria-label="Adotar Gato 4">Adote-me</button>
+                </div>
+                <img src="{% static 'images/nekos/cat4.jpg' %}" alt="Gato 4" class="pet-img">
+            </div>
+            <div class="pet-card">
+                <div class="pet-info-left">
+                    <p>Ritaleena</p>
+                    <p>Sou uma gatinha!</p>
+                    <button class="adote-me-btn" aria-label="Adotar Gato 5">Adote-me</button>
+                </div>
+                <img src="{% static 'images/nekos/cat5.jpg' %}" alt="Gato 5" class="pet-img">
+            </div>
+            <div class="pet-card">
+                <div class="pet-info-left">
+                    <p>Paçoca</p>
+                    <p>Sou uma gatinho!</p>
+                    <button class="adote-me-btn" aria-label="Adotar Gato 6">Adote-me</button>
+                </div>
+                <img src="{% static 'images/nekos/cat6.jpg' %}" alt="Gato 6" class="pet-img">
+            </div>
+            <div class="pet-card">
+                <div class="pet-info-left">
+                    <p>Magali</p>
+                    <p>Sou uma gatinha!</p>
+                    <button class="adote-me-btn" aria-label="Adotar Gato 7">Adote-me</button>
+                </div>
+                <img src="{% static 'images/nekos/cat7.jpg' %}" alt="Gato 7" class="pet-img">
+            </div>
+            <div class="pet-card">
+                <div class="pet-info-left">
+                    <p>Ulisses</p>
+                    <p>Sou uma gatinho!</p>
+                    <button class="adote-me-btn" aria-label="Adotar Gato 8">Adote-me</button>
+                </div>
+                <img src="{% static 'images/nekos/cat8.jpg' %}" alt="Gato 8" class="pet-img">
+            </div>
+            <div class="pet-card">
+                <div class="pet-info-left">
+                    <p>Tabata</p>
+                    <p>Sou uma gatinha!</p>
+                    <button class="adote-me-btn" aria-label="Adotar Gato 9">Adote-me</button>
+                </div>
+                <img src="{% static 'images/nekos/cat9.jpg' %}" alt="Gato 9" class="pet-img">
+            </div>
+            <div class="pet-card">
+                <div class="pet-info-left">
+                    <p>Caio</p>
+                    <p>Sou uma gatinho!</p>
+                    <button class="adote-me-btn" aria-label="Adotar Gato 10">Adote-me</button>
+                </div>
+                <img src="{% static 'images/nekos/cat10.jpg' %}" alt="Gato 10" class="pet-img">
+            </div>
+            <div class="pet-card">
+                <div class="pet-info-left">
+                    <p>Camile</p>
+                    <p>Sou uma gatinha!</p>
+                    <button class="adote-me-btn" aria-label="Adotar Gato 11">Adote-me</button>
+                </div>
+                <img src="{% static 'images/nekos/cat11.jpg' %}" alt="Gato 11" class="pet-img">
+            </div>
+            <div class="pet-card">
+                <div class="pet-info-left">
+                    <p>Nome: Gato 12</p>
+                    <p>Gênero: Fêmea</p>
+                    <button class="adote-me-btn" aria-label="Adotar Gato 12">Adote-me</button>
+                </div>
+                <img src="{% static 'images/nekos/cat12.jpg' %}" alt="Gato 12" class="pet-img">
+            </div>
+            <div class="pet-card">
+                <div class="pet-info-left">
+                    <p>BiBi</p>
+                    <p>Sou uma gatinha!</p>
+                    <button class="adote-me-btn" aria-label="Adotar Gato 13">Adote-me</button>
+                </div>
+                <img src="{% static 'images/nekos/cat13.jpg' %}" alt="Gato 13" class="pet-img">
+            </div>
+            <div class="pet-card">
+                <div class="pet-info-left">
+                    <p>Nicolau</p>
+                    <p>Sou uma gatinho!</p>
+                    <button class="adote-me-btn" aria-label="Adotar Gato 14">Adote-me</button>
+                </div>
+                <img src="{% static 'images/nekos/cat14.jpg' %}" alt="Gato 14" class="pet-img">
+            </div>
+            <div class="pet-card">
+                <div class="pet-info-left">
+                    <p>Batatinha</p>
+                    <p>Sou uma gatinho!</p>
+                    <button class="adote-me-btn" aria-label="Adotar Gato 15">Adote-me</button>
+                </div>
+                <img src="{% static 'images/nekos/cat15.jpg' %}" alt="Gato 15" class="pet-img">
+            </div>
         </div>
         <button class="nav-button" id="pets-next-btn">Próxima Página</button>
     </section>
 
     <!-- Coluna de Livros -->
     <section class="books-column">
-        <h2>Livraria para Gateiros</h2>
+        <h2 class="section-title">Livraria para Gateiros</h2>
         <div class="livros-grid" id="books-grid">
             <!-- Cartões de livros aqui -->
-            {% for book in books %}
             <div class="livro-card">
-                <div class="livro-info-top">
-                    <p>{{ book.title }}</p>
+                <div class="livro-info-left">
+                    <p>Neko Café</p>
+                    <button class="saiba-mais-btn" aria-label="Sinopse Livro 1">Sinopse</button>
                 </div>
-                <img src="{% static book.image %}" alt="Livro {{ book.title }}" class="livro-img">
-                <div class="livro-info-bottom">
-                    <button class="saiba-mais-btn" aria-label="Sinopse">Sinopse</button>
-                </div>
+                <img src="{% static 'images/books/book1.jpg' %}" alt="Livro 1" class="livro-img">
             </div>
-            {% endfor %}
+            <div class="livro-card">
+                <div class="livro-info-left">
+                    <p>Gato Pete</p>
+                    <button class="saiba-mais-btn" aria-label="Sinopse Livro 2">Sinopse</button>
+                </div>
+                <img src="{% static 'images/books/book2.jpg' %}" alt="Livro 2" class="livro-img">
+            </div>
+            <div class="livro-card">
+                <div class="livro-info-left">
+                    <p>Um gato em Tóquio</p>
+                    <button class="saiba-mais-btn" aria-label="Sinopse Livro 3">Sinopse</button>
+                </div>
+                <img src="{% static 'images/books/book3.jpg' %}" alt="Livro 3" class="livro-img">
+            </div>
+            <div class="livro-card">
+                <div class="livro-info-left">
+                    <p>Vou te receitar um gato</p>
+                    <button class="saiba-mais-btn" aria-label="Sinopse Livro 4">Sinopse</button>
+                </div>
+                <img src="{% static 'images/books/book4.jpg' %}" alt="Livro 4" class="livro-img">
+            </div>
+            <div class="livro-card">
+                <div class="livro-info-left">
+                    <p>A biblioteca dos sonhos secretos</p>
+                    <button class="saiba-mais-btn" aria-label="Sinopse Livro 5">Sinopse</button>
+                </div>
+                <img src="{% static 'images/books/book5.jpg' %}" alt="Livro 5" class="livro-img">
+            </div>
+            <div class="livro-card">
+                <div class="livro-info-left">
+                    <p>Frankie</p>
+                    <button class="saiba-mais-btn" aria-label="Sinopse Livro 6">Sinopse</button>
+                </div>
+                <img src="{% static 'images/books/book6.jpg' %}" alt="Livro 6" class="livro-img">
+            </div>
+            <div class="livro-card">
+                <div class="livro-info-left">
+                    <p>Como domesticar seu humano</p>
+                    <button class="saiba-mais-btn" aria-label="Sinopse Livro 7">Sinopse</button>
+                </div>
+                <img src="{% static 'images/books/book7.jpg' %}" alt="Livro 7" class="livro-img">
+            </div>
+            <div class="livro-card">
+                <div class="livro-info-left">
+                    <p>Contos de Gatos</p>
+                    <button class="saiba-mais-btn" aria-label="Sinopse Livro 8">Sinopse</button>
+                </div>
+                <img src="{% static 'images/books/book8.jpg' %}" alt="Livro 8" class="livro-img">
+            </div>
+            <div class="livro-card">
+                <div class="livro-info-left">
+                    <p>A Louca dos Gatos</p>
+                    <button class="saiba-mais-btn" aria-label="Sinopse Livro 9">Sinopse</button>
+                </div>
+                <img src="{% static 'images/books/book9.jpg' %}" alt="Livro 9" class="livro-img">
+            </div>
+            <div class="livro-card">
+                <div class="livro-info-left">
+                    <p>Relatos de um gato viajante</p>
+                    <button class="saiba-mais-btn" aria-label="Sinopse Livro 10">Sinopse</button>
+                </div>
+                <img src="{% static 'images/books/book10.jpg' %}" alt="Livro 10" class="livro-img">
+            </div>
+            <div class="livro-card">
+                <div class="livro-info-left">
+                    <p>As aventuras dos gatos Kawaii</p>
+                    <button class="saiba-mais-btn" aria-label="Sinopse Livro 11">Sinopse</button>
+                </div>
+                <img src="{% static 'images/books/book11.jpg' %}" alt="Livro 11" class="livro-img">
+            </div>
+            <div class="livro-card">
+                <div class="livro-info-left">
+                    <p>Os gatos do Café da Lua Cheia</p>
+                    <button class="saiba-mais-btn" aria-label="Sinopse Livro 12">Sinopse</button>
+                </div>
+                <img src="{% static 'images/books/book12.jpg' %}" alt="Livro 12" class="livro-img">
+            </div>
+            <div class="livro-card">
+                <div class="livro-info-left">
+                    <p>O Gato e a Fada</p>
+                    <button class="saiba-mais-btn" aria-label="Sinopse Livro 13">Sinopse</button>
+                </div>
+                <img src="{% static 'images/books/book13.jpg' %}" alt="Livro 13" class="livro-img">
+            </div>
+            <div class="livro-card">
+                <div class="livro-info-left">
+                    <p>O gato de botas</p>
+                    <button class="saiba-mais-btn" aria-label="Sinopse Livro 14">Sinopse</button>
+                </div>
+                <img src="{% static 'images/books/book14.jpg' %}" alt="Livro 14" class="livro-img">
+            </div>
+            <div class="livro-card">
+                <div class="livro-info-left">
+                    <p>Coraline</p>
+                    <button class="saiba-mais-btn" aria-label="Sinopse Livro 15">Sinopse</button>
+                </div>
+                <img src="{% static 'images/books/book15.jpg' %}" alt="Livro 15" class="livro-img">
+            </div>
         </div>
         <button class="nav-button" id="books-next-btn">Próxima Página</button>
     </section>

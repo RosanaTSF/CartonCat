@@ -1,19 +1,19 @@
 :root {
     --primary-color: #94bce7;
-    --secondary-color: #a8e6cf;
+    --secondary-color: #d2a2fc;
     --background-color: rgba(229, 239, 137, 0.9);
     --text-color: #ff1493; /* Rosa mais escuro */
-    --highlight-color: #c6f0c5;
+    --highlight-color: rgba(198, 240, 197, 0.8); /* Cor de destaque com transparência */
     --hover-shadow: 0 6px 12px rgba(255, 182, 193, 0.3);
-    --book-background-color: #ffc0cb; /* Fundo rosa claro para os livros */
-    --book-text-color: #a8e6cf; /* Texto verde para os livros */
+    --book-background-color: rgba(255, 192, 203, 0.8); /* Fundo rosa claro para os livros com transparência */
+    --book-text-color: #94bce7;
 }
 
 /* Estilo Global */
 * {
     font-family: Arial, sans-serif; /* Define a fonte como Arial */
-    color: var(--text-color); /* Define a cor do texto */
-    border-width: 10px; /* Define o tamanho das bordas */
+    color: #d2a2fc; /* Define a cor do texto */
+    border-width: 5px; /* Define o tamanho das bordas */
     border-style: solid; /* Define o estilo das bordas */
     border-color: transparent; /* Define a cor da borda como transparente por padrão */
 }
@@ -22,15 +22,15 @@
 body {
     background: url("../images/background.JPG") no-repeat center center fixed;
     background-size: cover;
-    margin: 0;
-    padding: 0;
+    margin: 5;
+    padding: 10;
     overflow-x: hidden;
 }
 
 /* Estilos de Contêiner */
 .container {
     text-align: center;
-    padding: 50px;
+    padding: 20px;
 }
 
 /* Cabeçalho */
@@ -49,12 +49,12 @@ body {
     display: flex;
     align-items: center;
     list-style: none;
-    padding: 0;
+    padding: 30;
     margin: 0;
 }
 
 .nav-list li {
-    margin-right: 20px;
+    margin-right: 90px;
 }
 
 /* Botões Genéricos */
@@ -66,17 +66,16 @@ body {
 .buscar-btn,
 .adote-me-btn,
 .saiba-mais-btn {
-    background-color: var(--primary-color);
-    color: var(--text-color);
+    background-color: #f8cffc;
+    color: #d2a2fc;
     border: none;
-    border-radius: 20px;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 16px; /* Diminuir o tamanho da fonte dos botões */
     transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
-
 .button {
-    padding: 15px 40px;
+    padding: 10px 30px; /* Diminuir o tamanho dos botões */
 }
 
 .nav-button,
@@ -86,7 +85,7 @@ body {
 .buscar-btn,
 .adote-me-btn,
 .saiba-mais-btn {
-    padding: 10px 20px;
+    padding: 6px 14px; /* Diminuir o tamanho dos botões */
     max-width: 150px;
 }
 
@@ -116,8 +115,8 @@ body {
 .content-grid {
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    margin-top: 40px;
+    gap: 60px;
+    margin-top: 60px;
 }
 
 .pets-section,
@@ -125,7 +124,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 50px;
 }
 
 .pets-grid,
@@ -133,7 +132,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 50px;
 }
 
 /* Cartões de Pets e Livros */
@@ -145,7 +144,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 220px; /* Aumenta a largura dos cartões */
+    width: 200px; /* Aumenta a largura dos cartões */
     box-shadow: var(--hover-shadow);
 }
 
@@ -155,34 +154,48 @@ body {
 
 .pet-img,
 .livro-img {
-    width: 200px; /* Aumenta a largura das imagens */
-    height: 200px; /* Aumenta a altura das imagens */
+    width: 150px; /* Define a largura das imagens */
+    height: 150px; /* Define a altura das imagens */
     border-radius: 10px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
 }
 
-.pet-info-top,
-.pet-info-bottom {
-    text-align: center;
+.pet-info-left,
+.livro-info-left {
+    text-align: left;
     color: var(--text-color);
+    margin-left: 10px;
 }
 
-.livro-info-top,
-.livro-info-bottom {
-    text-align: center;
-    color: var(--book-text-color);
+.livro-info-left {
+    color: #eff493;
 }
 
-.pet-info-top p,
-.livro-info-top p {
+.pet-info-left p,
+.livro-info-left p {
     margin: 0;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: bold;
 }
 
-.pet-info-bottom,
-.livro-info-bottom {
+.pet-info-left button,
+.livro-info-left button {
     margin-top: 10px;
+}
+
+/* Título das Seções */
+.section-title {
+    font-family: 'Georgia', serif; /* Mudar a fonte do título */
+    font-size: 24px; /* Tamanho da fonte do título */
+    text-align: center; /* Centralizar o título */
+    color: var(--text-color);
+}
+
+/* Linha Divisória */
+.section-divider {
+    width: 80%;
+    margin: 40px auto;
+    border: 1px solid var(--text-color);
 }
 
 /* Formulário de Busca */
@@ -199,7 +212,7 @@ body {
 .buscar-btn {
     padding: 10px;
     border-radius: 10px;
-    font-size: 16px;
+    font-size: 18px;
     border: none;
 }
 
