@@ -86,7 +86,7 @@ def detalhes(request, id):
 
 # ----------------------------------------------------------------------- CADASTRO ANIMAL
 
-def cadastro_animal(request):
+def cadastro(request):
     """
     View para cadastro de novos animais. Processa o formulário e salva no banco se for válido.
     """
@@ -97,7 +97,7 @@ def cadastro_animal(request):
             return HttpResponseRedirect('/')  # Redireciona para a página inicial após o cadastro.
     else:
         form = AnimalForm()  # Cria uma nova instância do formulário em caso de GET.
-    return render(request, 'cadastro_animal.html', {'form': form})  # Renderiza o template cadastro_animal.html com o formulário.
+    return render(request, 'cadastro.html', {'form': form})  # Renderiza o template cadastro_animal.html com o formulário.
 
 # ----------------------------------------------------------------------- REGISTER (EXEMPLO DE CADASTRO DE USUÁRIO)
 

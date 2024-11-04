@@ -1,10 +1,10 @@
 :root {
     --primary-color: #94bce7;
-    --secondary-color: #d2a2fc;
-    --background-color: rgba(229, 239, 137, 0.9);
-    --text-color: #ff1493; /* Rosa mais escuro */
+    --secondary-color: #a8e6cf;
+    --background-color: rgba(229, 239, 137, 0.9); /* Fundo translúcido */
+    --text-color: #ff69b4; /* Rosa mais escuro */
     --highlight-color: rgba(198, 240, 197, 0.8); /* Cor de destaque com transparência */
-    --hover-shadow: 0 6px 12px rgba(255, 182, 193, 0.3);
+    --hover-shadow: 0 6px 12px rgba(255, 182, 193, 0.3); /* Sombra ao passar o mouse */
     --book-background-color: rgba(255, 192, 203, 0.8); /* Fundo rosa claro para os livros com transparência */
     --book-text-color: #94bce7;
 }
@@ -12,7 +12,7 @@
 /* Estilo Global */
 * {
     font-family: Arial, sans-serif; /* Define a fonte como Arial */
-    color: #d2a2fc; /* Define a cor do texto */
+    color: var(--text-color); /* Define a cor do texto */
     border-width: 5px; /* Define o tamanho das bordas */
     border-style: solid; /* Define o estilo das bordas */
     border-color: transparent; /* Define a cor da borda como transparente por padrão */
@@ -66,10 +66,10 @@ body {
 .buscar-btn,
 .adote-me-btn,
 .saiba-mais-btn {
-    background-color: #f8cffc;
-    color: #d2a2fc;
+    background-color: var(--primary-color);
+    color: var(--text-color);
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
     cursor: pointer;
     font-size: 16px; /* Diminuir o tamanho da fonte dos botões */
     transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
@@ -168,7 +168,7 @@ body {
 }
 
 .livro-info-left {
-    color: #eff493;
+    color: var(--text-color);
 }
 
 .pet-info-left p,
@@ -196,6 +196,25 @@ body {
     width: 80%;
     margin: 40px auto;
     border: 1px solid var(--text-color);
+}
+
+/* Botão Próxima Página */
+.next-page-btn {
+    align-self: flex-end; /* Alinha o botão à direita */
+    margin-top: 20px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.next-page-btn:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    box-shadow: var(--hover-shadow);
+    transform: translateY(-5px);
 }
 
 /* Formulário de Busca */

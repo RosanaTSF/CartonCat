@@ -19,7 +19,7 @@
 <!-- Conteúdo Principal -->
 <main class="content-grid">
     <!-- Coluna de Gatos -->
-    <section class="pets-column">
+    <section class="pets-section">
         <h2 class="section-title">Adote um gatinho</h2>
         <div class="pets-grid" id="pets-grid">
             <!-- Cartões de pets aqui -->
@@ -144,11 +144,15 @@
                 <img src="{% static 'images/nekos/cat15.jpg' %}" alt="Gato 15" class="pet-img">
             </div>
         </div>
-        <button class="nav-button" id="pets-next-btn">Próxima Página</button>
+        <div class="next-page-container">
+            <button class="nav-button next-page-btn" id="pets-next-btn">Próxima Página</button>
+        </div>
     </section>
 
+    <hr class="section-divider">
+
     <!-- Coluna de Livros -->
-    <section class="books-column">
+    <section class="books-section">
         <h2 class="section-title">Livraria para Gateiros</h2>
         <div class="livros-grid" id="books-grid">
             <!-- Cartões de livros aqui -->
@@ -258,7 +262,9 @@
                 <img src="{% static 'images/books/book15.jpg' %}" alt="Livro 15" class="livro-img">
             </div>
         </div>
-        <button class="nav-button" id="books-next-btn">Próxima Página</button>
+        <div class="next-page-container">
+            <button class="nav-button next-page-btn" id="books-next-btn">Próxima Página</button>
+        </div>
     </section>
 </main>
 

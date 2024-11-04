@@ -1,3 +1,4 @@
+# urls.py
 from django.urls import path  # Importa a função path para definir rotas.
 from . import views  # Importa as views do aplicativo atual.
 from django.conf import settings  # Importa as configurações do projeto, especialmente para verificar se está em modo DEBUG.
@@ -10,11 +11,14 @@ urlpatterns = [
     # URL para a página de detalhes de um animal específico, identificada pelo 'id' do animal.
     path('detalhes/<int:id>/', views.detalhes, name='detalhes'),  
     
-    # URL para a página de cadastro de animais, chama a função 'cadastro_animal' na view.
-    path('cadastro_animal/', views.cadastro_animal, name='cadastro_animal'),  
+    # URL para a página de cadastro de animais, chama a função 'cadastro' na view.
+    path('cadastro/', views.cadastro, name='cadastro'),  
     
     # URL para a página do mapa, chama a função 'map_view' na view.
     path('map/', views.map_view, name='map'),  
+    
+    # URL para a página de registro de usuários, chama a função 'register' na view.
+    path('register/', views.register, name='register'),  
 ]
 
 # Configuração de URLs de mídia para servir arquivos de mídia em modo de desenvolvimento
