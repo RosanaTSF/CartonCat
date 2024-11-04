@@ -13,18 +13,17 @@
 * {
     font-family: Arial, sans-serif; /* Define a fonte como Arial */
     color: var(--text-color); /* Define a cor do texto */
-    border-width: 5px; /* Define o tamanho das bordas */
-    border-style: solid; /* Define o estilo das bordas */
-    border-color: transparent; /* Define a cor da borda como transparente por padrão */
+    border: 5px solid transparent; /* Define o tamanho e estilo das bordas */
+    box-sizing: border-box; /* Inclui bordas e padding nas dimensões do elemento */
 }
 
 /* Estilo do Corpo */
 body {
     background: url("../images/background.JPG") no-repeat center center fixed;
     background-size: cover;
-    margin: 5;
-    padding: 10;
-    overflow-x: hidden;
+    margin: 0; /* Remove margens padrão */
+    padding: 10px; /* Define padding para o corpo */
+    overflow-x: hidden; /* Impede rolagem horizontal */
 }
 
 /* Estilos de Contêiner */
@@ -49,7 +48,7 @@ body {
     display: flex;
     align-items: center;
     list-style: none;
-    padding: 30;
+    padding: 0; /* Remove padding padrão */
     margin: 0;
 }
 
@@ -74,6 +73,7 @@ body {
     font-size: 16px; /* Diminuir o tamanho da fonte dos botões */
     transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
+
 .button {
     padding: 10px 30px; /* Diminuir o tamanho dos botões */
 }
@@ -165,10 +165,6 @@ body {
     text-align: left;
     color: var(--text-color);
     margin-left: 10px;
-}
-
-.livro-info-left {
-    color: var(--text-color);
 }
 
 .pet-info-left p,

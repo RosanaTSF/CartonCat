@@ -1,34 +1,78 @@
-<!-- animais/templates/register.html -->
 {% extends 'base.html' %}
 {% load static %}
+{% load custom_filters %}
 
 {% block content %}
 <div class="container mt-5">
-    <h1 class="mb-4">Registro de Usuário</h1>
-    <form method="post" class="form">
-        {% csrf_token %}
-        <div class="form-group">
-            {{ form.username.label_tag }}
-            {{ form.username }}
-            {% if form.username.help_text %}
-                <small class="form-text text-muted">{{ form.username.help_text }}</small>
-            {% endif %}
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1 class="mb-4 text-center">Registro de Usuário</h1>
+            <p class="text-muted text-center mb-4">Por favor, preencha o formulário abaixo para criar sua conta.</p>
+
+            <form method="post" class="form">
+                {% csrf_token %}
+
+                <!-- Campo de Nome de Usuário -->
+                <div class="form-group">
+                    {{ form.username.label_tag }}
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        </div>
+                        {{ form.username|add_class:"form-control" }}
+                    </div>
+                    {% if form.username.help_text %}
+                        <small class="form-text text-muted">{{ form.username.help_text }}</small>
+                    {% endif %}
+                    {% if form.username.errors %}
+                        <div class="invalid-feedback d-block">
+                            {{ form.username.errors.as_text }}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <!-- Campo de Senha -->
+                <div class="form-group">
+                    {{ form.password1.label_tag }}
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                        </div>
+                        {{ form.password1|add_class:"form-control" }}
+                    </div>
+                    {% if form.password1.help_text %}
+                        <small class="form-text text-muted">{{ form.password1.help_text }}</small>
+                    {% endif %}
+                    {% if form.password1.errors %}
+                        <div class="invalid-feedback d-block">
+                            {{ form.password1.errors.as_text }}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <!-- Campo de Confirmação de Senha -->
+                <div class="form-group">
+                    {{ form.password2.label_tag }}
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                        </div>
+                        {{ form.password2|add_class:"form-control" }}
+                    </div>
+                    {% if form.password2.help_text %}
+                        <small class="form-text text-muted">{{ form.password2.help_text }}</small>
+                    {% endif %}
+                    {% if form.password2.errors %}
+                        <div class="invalid-feedback d-block">
+                            {{ form.password2.errors.as_text }}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <!-- Botão de Envio -->
+                <button type="submit" class="btn btn-primary btn-block mt-3">Registrar</button>
+            </form>
         </div>
-        <div class="form-group">
-            {{ form.password1.label_tag }}
-            {{ form.password1 }}
-            {% if form.password1.help_text %}
-                <small class="form-text text-muted">{{ form.password1.help_text }}</small>
-            {% endif %}
-        </div>
-        <div class="form-group">
-            {{ form.password2.label_tag }}
-            {{ form.password2 }}
-            {% if form.password2.help_text %}
-                <small class="form-text text-muted">{{ form.password2.help_text }}</small>
-            {% endif %}
-        </div>
-        <button type="submit" class="btn btn-primary">Registrar</button>
-    </form>
+    </div>
 </div>
 {% endblock %}
