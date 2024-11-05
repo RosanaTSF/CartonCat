@@ -10,7 +10,8 @@ urlpatterns = [
     path('cadastro/', views.cadastro, name='cadastro'),
     path('map/', views.map_view, name='map'),
     path('register/', views.register, name='register'),
-    path('login/', auth_views.LoginView.as_view(), name='login'),  # Adiciona a URL de login
+    path('login/', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),  # Adiciona a URL de login
+    path('adocao/<int:id>/', views.adocao, name='adocao'),  # Adiciona a URL de adoção
 ]
 
 if settings.DEBUG:

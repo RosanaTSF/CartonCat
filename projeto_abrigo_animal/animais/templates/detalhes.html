@@ -1,22 +1,23 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block content %}
     <div class="container mt-4">
         <div class="pet-info">
             <div class="photo">
-                <img src="{{ pet.foto_pet.url }}" alt="{{ pet.nome }}">
+                <img src="{{ animal.foto.url }}" alt="{{ animal.nome }}">
             </div>
             <div class="details">
-                <h2 class="highlight-text">{{ pet.nome }}</h2>
-                <p>{{ pet.tipo }} | {{ pet.sexo }} | {{ pet.idade }} | {{ pet.porte }} | {{ pet.raca }}</p>
+                <h2 class="highlight-text">{{ animal.nome }}</h2>
+                <p>{{ animal.tipo }} | {{ animal.gênero }} | {{ animal.idade }} | {{ animal.porte }} | {{ animal.raca }}</p>
                 <p><strong>Local:</strong> São Paulo</p>
-                <p><strong>História:</strong> {{ pet.descricao }}</p>
-                <a href="/admin/" class="adopt-button">Quero Adotar</a>
+                <p><strong>História:</strong> {{ animal.descricao }}</p>
+                <a href="{% url 'adocao' animal.id %}" class="adopt-button">Quero Adotar</a>
                 
                 <div class="medical-info">
                     <h3 class="medical-title">Detalhes Médicos:</h3>
                     <div class="status">
-                        {% for detalhe in pet.detalhes_medicos %}
+                        {% for detalhe in animal.cuidados %}
                             <div class="medical-detail">{{ detalhe }}</div>
                         {% endfor %}
                     </div>

@@ -14,6 +14,7 @@
     <form action="{% url 'cadastro_item' %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
 
+        <!-- Formulário para cadastro de gatos -->
         <div id="form_gato" style="display:none;">
             <h2>Cadastro de Gato</h2>
             <table>
@@ -22,31 +23,32 @@
                     <td><input type="text" id="nome" name="nome"></td>
                 </tr>
                 <tr>
-                    <td><label for="idade">Idade:</label></td>
+                    <td><label for="gênero">Gênero:</label></td>
                     <td>
-                        <select id="idade" name="idade">
-                            <option value="filhote">Filhote</option>
-                            <option value="adulto">Adulto</option>
-                            <option value="senior">Sênior</option>
+                        <select id="gênero" name="gênero">
+                            <option value="Gato">Gato</option>
+                            <option value="Gata">Gata</option>
                         </select>
                     </td>
                 </tr>
                 <tr>
-                    <td><label for="sexo">Sexo:</label></td>
-                    <td>
-                        <select id="sexo" name="sexo">
-                            <option value="macho">Macho</option>
-                            <option value="femea">Fêmea</option>
-                        </select>
-                    </td>
+                    <td><label for="cor">Cor:</label></td>
+                    <td><input type="text" id="cor" name="cor"></td>
                 </tr>
                 <tr>
-                    <td><label for="foto">Foto do Gato:</label></td>
-                    <td><input type="file" id="foto" name="foto" accept="image/*"></td>
+                    <td><label for="cuidados">Cuidados:</label></td>
+                    <td>
+                        <select id="cuidados" name="cuidados" multiple>
+                            <option value="VACINADO">Vacinado</option>
+                            <option value="VERMIFUGADO">Vermifugado</option>
+                            <option value="CASTRADO">Castrado</option>
+                        </select>
+                    </td>
                 </tr>
             </table>
         </div>
 
+        <!-- Formulário para cadastro de livros -->
         <div id="form_livro" style="display:none;">
             <h2>Cadastro de Livro</h2>
             <table>
@@ -55,20 +57,8 @@
                     <td><input type="text" id="titulo" name="titulo"></td>
                 </tr>
                 <tr>
-                    <td><label for="autor">Autor:</label></td>
-                    <td><input type="text" id="autor" name="autor"></td>
-                </tr>
-                <tr>
-                    <td><label for="genero">Gênero:</label></td>
-                    <td><input type="text" id="genero" name="genero"></td>
-                </tr>
-                <tr>
-                    <td><label for="publicacao">Ano de Publicação:</label></td>
-                    <td><input type="number" id="publicacao" name="publicacao"></td>
-                </tr>
-                <tr>
-                    <td><label for="isbn">ISBN:</label></td>
-                    <td><input type="text" id="isbn" name="isbn"></td>
+                    <td><label for="sinopse">Sinopse:</label></td>
+                    <td><textarea id="sinopse" name="sinopse"></textarea></td>
                 </tr>
             </table>
         </div>

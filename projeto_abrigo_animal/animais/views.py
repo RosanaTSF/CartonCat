@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
-from .forms import AnimalForm, GatoForm
+from .forms import AnimalForm, GatoForm, AdocaoForm
 from .models import Animal
 from .utils import get_client_ip, get_geolocation
 import folium
@@ -77,3 +77,19 @@ def register(request):
     else:
         form = UserCreationForm()
     return render(request, 'register.html', {'form': form})
+
+# ----------------------------------------------------------------------- FORMULÁRIO DE ADOÇÃO
+
+def adocao(request, id):
+    animal = get_object_or_404(Animal, id=id)
+    if request.method == 'POST':
+        form = AdocaoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Pedido de adoção enviado com sucesso!')
+            return redirect('home')
+        else:
+            messages.error(request, 'Por favor, corrija os erros abaixo.')
+    else:
+        form = AdocaoForm()
+    return render(request, 'adocao.html', {'form': form, 'animal': animal})
