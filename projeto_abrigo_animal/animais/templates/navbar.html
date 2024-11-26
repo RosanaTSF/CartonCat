@@ -10,6 +10,22 @@
         --lilac-color: #c6f0c5;
     }
 
+    /* Global styles */
+    body {
+        text-align: center;
+    }
+
+    /* Título principal */
+    .page-title {
+        font-size: 48px; /* Tamanho maior */
+        font-weight: bold;
+        color: #ff69b4; /* Cor do texto */
+        font-family: 'Comic Sans MS', 'Comic Sans', cursive; /* Fonte divertida */
+        margin-top: 20px;
+        text-shadow: 2px 2px 5px rgba(255, 182, 193, 0.5); /* Adicionar sombra ao texto */
+        line-height: 1.3; /* Melhorar espaçamento entre linhas */
+    }
+
     /* Navbar Container */
     .navbar {
         background-color: var(--background-color); /* Fundo translúcido */
@@ -18,14 +34,15 @@
 
     /* Brand (Texto) */
     .navbar-brand {
-        font-size: 36px; /* Aumentar tamanho da fonte */
+        font-size: 28px; /* Tamanho reduzido para melhor encaixe */
         font-weight: bold;
         color: #ff69b4; /* Cor do texto */
-        display: flex;
-        align-items: center;
-        justify-content: center;
         font-family: 'Comic Sans MS', 'Comic Sans', cursive; /* Fonte fofa */
         margin: 0 auto; /* Centralizar */
+        max-width: 800px; /* Limitar largura */
+        text-align: center; /* Centralizar texto */
+        word-wrap: break-word; /* Permitir quebra de palavras longas */
+        line-height: 1.5; /* Melhorar espaçamento entre linhas */
         transition: color 0.3s ease; /* Transição suave para a cor */
     }
 
@@ -40,11 +57,6 @@
     }
 
     /* Navbar Buttons */
-    .navbar-nav .nav-item .nav-link {
-        color: #ff69b4; /* Cor do texto */
-        margin-right: 10px;
-    }
-
     .navbar-nav .nav-item .btn {
         margin-right: 10px;
     }
@@ -79,10 +91,18 @@
     }
 </style>
 
+<!-- Título principal da página -->
+<div class="page-title">
+    Carton Cat - Lar de Papelão!
+</div>
+
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
-            Carton Cat - Livraria Felina.
+            Se você busca seu primeiro gatinho - ou precisa aumentar a família - nós podemos te ajudar <br>
+            a encontrar o seu novo amigo! Além da nossa seção de Adoção, temos também, nosso espaço literário, <br>
+            onde todos os nossos livros e mangás são escritos com personagens felinos. Sejam muito bem-vindos! 🐱
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

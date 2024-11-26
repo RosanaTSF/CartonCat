@@ -15,7 +15,7 @@
                 <a href="{% url 'adocao' animal.id %}" class="adopt-button">Quero Adotar</a>
                 
                 <div class="medical-info">
-                    <h3 class="medical-title">Detalhes Médicos:</h3>
+                    <h3 class="medical-title">Saúde Pet:</h3>
                     <div class="status">
                         {% for detalhe in animal.cuidados %}
                             <div class="medical-detail">{{ detalhe }}</div>
